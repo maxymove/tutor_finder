@@ -1,4 +1,4 @@
-package ooc.project.tutorfinder;
+package ooc.project.tutorfinder.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

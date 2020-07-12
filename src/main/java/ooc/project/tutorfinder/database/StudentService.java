@@ -29,4 +29,8 @@ public class StudentService {
         }
         return students;
     }
+
+    public boolean checkIfUserExists(String username) {
+        studentRepository.
+    }
 }

@@ -1,25 +1,18 @@
-package ooc.project.tutorfinder;
+package ooc.project.tutorfinder.controller;
 
 import ooc.project.tutorfinder.database.Student;
-import ooc.project.tutorfinder.database.StudentRepository;
 import ooc.project.tutorfinder.database.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class ApplicationController {
-
-    @Autowired
-    private StudentRepository studentRepository;
+public class RegisterController {
 
     @Autowired
     private StudentService studentService;
-
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String loginForm() {
-        return "login";
-    }
 
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public String registerForm() {
@@ -37,12 +30,5 @@ public class ApplicationController {
     @RequestMapping(value = "/register-success", method = RequestMethod.GET)
     public String registerDone() {
         return "register-success";
-    }
-
-    @RequestMapping(value = "/users", method = RequestMethod.GET)
-    public @ResponseBody
-    Iterable<Student> getAllUsers() {
-        // This returns a JSON or XML with the users
-        return studentRepository.findAll();
     }
 }
