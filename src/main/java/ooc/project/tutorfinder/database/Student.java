@@ -15,19 +15,25 @@ import javax.persistence.*;
 @Table(name="students")
 public class Student {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    @Id @GeneratedValue
+    private long id;
 
+    private String fullName;
+
+    @Column(unique = true)
     private String username;
 
     private String password;
 
     private String email;
 
-    public Student(String username, String password, String email) {
+    private String dob;
+
+    public Student(String fullName, String username, String password, String email, String dob) {
+        this.fullName = fullName;
         this.username = username;
         this.password = password;
         this.email = email;
+        this.dob = dob;
     }
 }

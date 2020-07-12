@@ -27,15 +27,18 @@ public class ApplicationController {
     }
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    @ResponseBody
-    public String doRegister(@RequestParam String username, @RequestParam String password,
-                             @RequestParam String email) {
-        Student student = new Student(username, password, email);
+    public String doRegister(@RequestParam String fullName, @RequestParam String username, @RequestParam String password,
+                             @RequestParam String email, @RequestParam String dob) {
+        Student student = new Student(fullName, username, password, email, dob);
         studentService.addStudent(student);
-        return username + " added.";
+        return "redirect:/register-success";
     }
 
-//    @GetMapping(path="/users")
+    @RequestMapping(value = "/register-success", method = RequestMethod.GET)
+    public String registerDone() {
+        return "register-success";
+    }
+
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     public @ResponseBody
     Iterable<Student> getAllUsers() {

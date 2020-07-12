@@ -1,8 +1,11 @@
-<%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
-<%@ taglib prefix="th" uri="http://www.springframework.org/tags/form" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: cha
+  Date: 12/7/2020 AD
+  Time: 23:22
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
-<!DOCTYPE html>
 <html>
 <head>
 
@@ -86,33 +89,27 @@
         .button:hover .button__vertical {
             transform: scaleY(0);
         }
-
     </style>
 </head>
-<body style="background-color:#fcf3ec">
+<body style="background-color:  #fcf3ec ">
 <img src="../Tutor_Finder_Logo.png" alt="Tutor Finder"/>
-<h1>Welcome to Tutor Finder</h1>
-<p> <b>Tutor Finder</b>, the best online platform where you can find a tutor to help you improve your skill and understanding in any area of study.<br>
-    <br>
-</p>
-<p> <b>ARE YOU </b><br>
-    <br>
-</p>
+<h1>Register</h1>
+
+<form>
+    <fieldset>
+        <legend><p><b>Congratulations!!</b></p></legend>
+        <p>
+            <label><b>Your Registeration is successful!!</b></label>
+        </p>
+
+    </fieldset>
+</form>
+<br>
 <button type="button" class="button" onclick="document.location.href='/login';"/>
-Student
+DONE
 <div class="button__horizontal"></div>
 <div class="button__vertical"></div>
 </button>
-<br>
-<p> <b>OR</b></p>
-<br>
-<button class="button">
-    Teacher
-    <div class="button__horizontal"></div>
-    <div class="button__vertical"></div>
-</button>
-
 
 </body>
-
 </html>
