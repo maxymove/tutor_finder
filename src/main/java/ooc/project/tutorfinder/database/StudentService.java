@@ -30,7 +30,11 @@ public class StudentService {
         return students;
     }
 
+    public Student findByUsername(String username) {
+        return findByUsername(username);
+    }
+
     public boolean checkIfUserExists(String username) {
-        studentRepository.
+        return findByUsername(username) != null;
     }
 }

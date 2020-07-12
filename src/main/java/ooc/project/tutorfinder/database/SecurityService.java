@@ -8,7 +8,7 @@ import java.util.Objects;
 public class SecurityService {
 
     @Autowired
-    private StudentService studentServiceService;
+    private StudentService studentService;
 
     @Autowired
     private HttpSession session;
@@ -20,7 +20,7 @@ public class SecurityService {
 
     public boolean isAuthorized() {
         String username = getCurrentUsername();
-        return studentServiceService.checkIfUserExists(username);
+        return studentService.checkIfUserExists(username);
     }
 
     public void logout() {

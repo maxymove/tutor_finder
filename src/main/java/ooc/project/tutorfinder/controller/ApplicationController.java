@@ -12,11 +12,6 @@ public class ApplicationController {
     @Autowired
     private StudentRepository studentRepository;
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String loginForm() {
-        return "login";
-    }
-
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     public @ResponseBody
     Iterable<Student> getAllUsers() {

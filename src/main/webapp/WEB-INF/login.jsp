@@ -87,28 +87,39 @@
 <br>
 <h1>LOGIN</h1>
 
-<fieldset>
-    <legend><b>Enter your details</b></legend>
-    <p>
-        <label><b>Username</b></label>
-        <input type = "text"
-               id = "myText"
-               value = "" />
-    </p>
-    <p>
-        <label><b>Password</b></label>
-        <input type = "password"
-               id = "myPwd"
-               value = "" />
-    </p>
-</fieldset>
+<form action="/login" method="post">
+    <fieldset>
+        <legend><b>Enter your details</b></legend>
+        <p>
+            <label><b>Username</b></label>
+            <input type = "text"
+                   name="username"
+            <%--               id = "myText"--%>
+                   value = "" />
+        </p>
+        <p>
+            <label><b>Password</b></label>
+            <input type = "password"
+                   name="password"
+            <%--               id = "myPwd"--%>
+                   value = "" />
+        </p>
+    </fieldset>
+    <button type="submit" class="button" onclick="document.location.href='/';">
+        <%--    <button class="button">--%>
+        Sign in
+        <div class="button__horizontal"></div>
+        <div class="button__vertical"></div>
+    </button>
+
+</form>
 <br>
 <br>
-<button class="button">
-    Sign in
-    <div class="button__horizontal"></div>
-    <div class="button__vertical"></div>
-</button>
+<%--<button class="button">--%>
+<%--    Sign in--%>
+<%--    <div class="button__horizontal"></div>--%>
+<%--    <div class="button__vertical"></div>--%>
+<%--</button>--%>
 <br>
 <br>
 <button type="button" class="button" onclick="document.location.href='/register';">
