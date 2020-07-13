@@ -22,7 +22,7 @@ public class LogInController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String doLogin(@RequestParam String username, @RequestParam String password, Model model) {
         if (securityService.login(username, password)) {
-            return "redirect:/";
+            return "redirect:/user/" + username;
         } else {
             model.addAttribute("error", "Wrong username or password");
             return "login";

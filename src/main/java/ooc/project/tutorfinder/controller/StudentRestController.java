@@ -3,9 +3,7 @@ package ooc.project.tutorfinder.controller;
 import ooc.project.tutorfinder.entity.Student;
 import ooc.project.tutorfinder.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,5 +22,16 @@ public class StudentRestController {
             users.add(student.getUsername());
         }
         return users;
+    }
+
+    @RequestMapping(value = "/user/{username}", method = RequestMethod.GET)
+    public List<String> showUserInfo(@PathVariable(name = "username", required = true) String username) {
+        List<String> studentInfo = new ArrayList<>();
+        Student student = studentRepository.findByUsername(username);
+        studentInfo.add(student.getFullName());
+        studentInfo.add(student.getUsername());
+        studentInfo.add(student.getEmail());
+        studentInfo.add(student.getDob());
+        return studentInfo;
     }
 }
