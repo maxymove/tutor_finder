@@ -1,17 +1,20 @@
-package ooc.project.tutorfinder.database;
+package ooc.project.tutorfinder.service;
 
+import ooc.project.tutorfinder.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpSession;
 import java.util.Objects;
 
+@Service
 public class SecurityService {
 
     @Autowired
-    private StudentService studentService;
+    private HttpSession session;
 
     @Autowired
-    private HttpSession session;
+    private StudentService studentService;
 
     public String getCurrentUsername() {
         Object usernameObject = session.getAttribute("username");

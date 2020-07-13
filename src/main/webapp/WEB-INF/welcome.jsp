@@ -90,6 +90,7 @@
     </style>
 </head>
 <body style="background-color:#fcf3ec">
+<h1>Welcome, ${username}</h1>
 <img src="../Tutor_Finder_Logo.png" alt="Tutor Finder"/>
 <h1>Welcome to Tutor Finder</h1>
 <p> <b>Tutor Finder</b>, the best online platform where you can find a tutor to help you improve your skill and understanding in any area of study.<br>

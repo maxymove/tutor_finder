@@ -105,7 +105,7 @@
                    value = "" />
         </p>
     </fieldset>
-    <button type="submit" class="button" onclick="document.location.href='/';">
+    <button type="submit" class="button" onclick="document.location.href='/login';">
         <%--    <button class="button">--%>
         Sign in
         <div class="button__horizontal"></div>
@@ -127,6 +127,10 @@
     <div class="button__horizontal"></div>
     <div class="button__vertical"></div>
 </button>
+
+<h2>
+    ${error}
+</h2>
 
 </body>
 </html>
