@@ -3,7 +3,23 @@
 <head>
 
     <style>
-
+        h2{
+            color: #e55743;
+        }
+        form{
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        legend{
+            color: #e55743;
+        }
+        p{
+            color: #e55743;
+        }
         h1 {
             color: #e55743;
         }
@@ -86,40 +102,29 @@
 <img src="../Tutor_Finder_Logo.png" alt="Tutor Finder"/>
 <br>
 <h1>LOGIN</h1>
-
 <form action="/login" method="post">
     <fieldset>
         <legend><b>Enter your details</b></legend>
         <p>
             <label><b>Username</b></label>
             <input type = "text"
-                   name="username"
-            <%--               id = "myText"--%>
-                   value = "" />
+                   name="username"/>
+
         </p>
         <p>
             <label><b>Password</b></label>
             <input type = "password"
-                   name="password"
-            <%--               id = "myPwd"--%>
-                   value = "" />
+                   name="password"/>
+
         </p>
     </fieldset>
+    <br>
+    <br>
     <button type="submit" class="button" onclick="document.location.href='/login';">
-        <%--    <button class="button">--%>
         Sign in
         <div class="button__horizontal"></div>
         <div class="button__vertical"></div>
     </button>
-
-</form>
-<br>
-<br>
-<%--<button class="button">--%>
-<%--    Sign in--%>
-<%--    <div class="button__horizontal"></div>--%>
-<%--    <div class="button__vertical"></div>--%>
-<%--</button>--%>
 <br>
 <br>
 <button type="button" class="button" onclick="document.location.href='/register';">
@@ -132,5 +137,6 @@
     ${error}
 </h2>
 
+</form>
 </body>
 </html>

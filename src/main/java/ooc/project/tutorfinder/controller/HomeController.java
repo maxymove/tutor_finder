@@ -15,9 +15,9 @@ public class HomeController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home(Model model) {
-        if (!securityService.isAuthorized()) {
-            return "redirect:/login";
-        }
+//        if (!securityService.isAuthorized()) {
+//            return "redirect:/login";
+//        }
         model.addAttribute("username", securityService.getCurrentUsername());
         return "welcome";
     }

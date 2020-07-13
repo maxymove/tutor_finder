@@ -1,9 +1,34 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <script>
+        function validateForm() {
+            var fname = document.forms["registerForm"]["fullName"].value;
+            var uname = document.forms["registerForm"]["username"].value;
+            var pass = document.forms["registerForm"]["password"].value;
+            var repass = document.forms["registerForm"]["retrypassword"].value;
+            var email = document.forms["registerForm"]["email"].value;
+            var dob = document.forms["registerForm"]["dob"].value;
+            if (fname == "" || fname == null || uname == "" || uname == null || pass == "" || pass == null || repass == "" || repass == null || email == "" || email == null || dob == "" || dob == null) {
+                alert("Please fill all the informations !!");
+                return false;
+            }
+            return true;
+        }
+    </script>
 
     <style>
-
+        form{
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        legend{
+            color: #e55743;
+        }
         p{
             color: #e55743;
         }
@@ -89,34 +114,35 @@
 <img src="../Tutor_Finder_Logo.png" alt="Tutor Finder"/>
 <h1>Register</h1>
 
-<form action="/register" method="post">
+<form name="registerForm" onsubmit="return validateForm()" action="/register" method="post">
     <fieldset>
         <legend><b>Enter your details</b></legend>
         <p>
             <label><b>Full Name</b></label>
             <input type = "text"
                    name="fullName"
-<%--                   id = "myText"--%>
+            <%--                   id = "myText"--%>
                    value = "" />
         </p>
         <p>
             <label><b>Username</b></label>
             <input type = "text"
                    name="username"
-<%--                   id = "myText"--%>
+            <%--                   id = "myText"--%>
                    value = "" />
         </p>
         <p>
             <label><b>Password</b></label>
             <input type = "password"
                    name="password"
-<%--                   id = "myPwd"--%>
+            <%--                   id = "myPwd"--%>
                    value = "" />
         </p>
         <p>
             <label><b>Re-enter Password</b></label>
             <input type = "password"
-<%--                   id = "myPwd"--%>
+                   name = "retrypassword"
+            <%--                   id = "myPwd"--%>
                    value = "" />
         </p>
         <p>
@@ -130,14 +156,14 @@
             <label><b>Date of Birth</b></label>
             <input type = "text"
                    name="dob"
-<%--                   id = "myText"--%>
+            <%--                   id = "myText"--%>
                    value = "" />
         </p>
 
     </fieldset>
 
-    <button type="submit" class="button" onclick="document.location.href='/register';">
-        DONE
+    <br>
+    <button type="submit" class="button"  onclick="document.location.href='/register';">DONE
         <div class="button__horizontal"></div>
         <div class="button__vertical"></div>
     </button>
